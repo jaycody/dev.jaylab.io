@@ -1,0 +1,27 @@
+body {
+  background-color: black
+}
+
+div {
+  color: grey;
+  
+}
+
+.now {
+  font-size: 20px
+}
+
+.releaseDate {
+  font-size: 20px
+}
+
+.remaining {
+  
+  margin: auto;
+  width: 98%;
+  padding-top: 5%;
+  
+  font-size: 8vmax;
+  
+  
+}

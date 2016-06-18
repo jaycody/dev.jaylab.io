@@ -1,0 +1,10 @@
+#pwd 			{font-size: 15px;}
+#lastModified  	{font-weight: bold; font-size: 10px}
+#info			{text-align: center; border-style: solid} 
+#mainPoints > li:nth-child(2) {
+				font-size:25px;}
+table			{width:100%;}
+table, th, td	{border: 1px solid black; border-collapse: collapse;}
+th, td			{padding: 5px;}
+button 			{color: red;}
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>09-objects_G</title>
+		</head>
+
+		<body>
+			<h3>js_gungfu-w3_tutorials-09-objects_GEE</h3>
+			<ul>
+				<li>use an <strong>OBJECT LITERAL</strong> to define and create an object</li>
+			</ul>
+		
+			<ol>
+				<li>
+					<h4>Car Review:</h4>
+					<p id='review'></p>
+				</li>
+
+				<li>
+					<h4>car.review() function definition:</h4>
+					<p id='functionDef'></p>
+				</li>
+
+			</ol>
+			<script>
+				var car = {
+					type:   "Datsun",
+					model:  "510",
+					color:  "green",
+					review: function() {
+						return "I loves me my " + this.color + " " + this.type + " " + this.model + "!!!!!";
+					}
+				};
+				console.log("List properties of the car object:")
+				console.log("Make = " + car.type + ", Model = " + car.model + ", Color = " + car.color);
+				console.log("Now call a method from the car object:");
+				console.log("");
+				console.log(car.review());
+				console.log("");
+				console.log("Now access the function definition by ommiting the ()");
+				console.log(car.review);
+
+				document.getElementById('review').innerHTML = car.review();
+				document.getElementById('functionDef').innerHTML = car.review;
+
+			</script>
+
+
+		</body>
+
+	</html>

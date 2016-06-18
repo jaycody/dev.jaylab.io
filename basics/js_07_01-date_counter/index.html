@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <link rel="stylesheet" type="text/css" href="date.css">
+      <meta charset="UTF-8">
+      <title>countdown</title>
+    </head>
+    <body>
+      <h3>js_gungfu_07_01-date_counter</h3>
+      <table id = 'countdown_to_release'>
+        <tr>
+          <th>countdown to release</th>
+        </tr>
+        <tr>
+          <td>days to release:</td>
+          <td id='daysToRelease'></td>
+        </tr>
+        <tr>
+          <td>hours to release:</td>
+          <td id='hoursToRelease'></td>
+        </tr>
+        <tr>
+          <td>minutes to release</td>
+          <td id='minsToRelease'></td>
+        </tr>
+        <tr>
+          <td>seconds to release</td>
+          <td id='secToRelease'></td>
+        </tr>
+        <tr>
+          <td>milliseconds to release</td>
+          <td id='milliToRelease'></td>
+        </tr>
+      </table>
+      <hr>
+      <table id='get_now'>
+        <tr>
+          <th>get now</th>
+          <th id='today'></th>
+        </tr>
+        <tr>
+          <td>var today = new Date();</td>
+        </tr>
+        <tr>
+          <td>getDay()</td>
+          <td id='dayOfWeek'></td>
+        </tr>
+        <tr>
+          <td>getMonth()</td>
+        </tr>
+        <tr>
+          <td>getFullYear()</td>
+        </tr>
+        <tr>
+          <td>getHours()</td>
+        </tr>
+        <tr>
+          <td>getMinutes()</td>
+        </tr>
+        <tr>
+          <td>getSeconds()</td>
+        </tr>
+        <tr>
+          <td>getMilliseconds()</td>
+        </tr>
+        <tr>
+          <td>getTime()</td>
+          <td>milliseconds since midnight Jan 1st 1970</td>
+        </tr>    
+      </table>
+      <hr>
+      <table id='set_release_date'>
+        <tr>
+          <th>set release date</th>
+          <th id ='releaseDate'></th>
+        </tr>
+        <tr>
+          <td>setFullYear()</td>
+          <td>future.setFullYear(2012)</td>
+        </tr>
+        <tr>
+          <td>setMonth()</td>
+          <td>future.setMonth(12)</td>
+        </tr>
+        <tr>
+          <td>setDate()</td>
+          <td>future.setDate(7)</td>
+          <td>day of the month is the 7th</td>
+        </tr>
+        <tr>
+          <td>setHours()</td>
+          <td>future.setHours(5)</td>
+          <td>5am</td>
+        </tr>
+        <tr>
+          <td>setMinutes()</td>
+          <td>future.setMinutes(5)</td>
+          <td>5 minutes past the hour</td>
+        </tr>
+        <tr>
+          <td>setSeconds()</td>
+          <td>future.setMinutes(45)</td>
+          <td>45 seconds past the minute</td>
+        </tr>
+        <tr>
+          <td>setMilliseconds()</td>
+          <td>future.setMilliseconds(500)</td>
+          <td>500 milliseconds past the second</td>
+        </tr>
+      </table>
+      
+      <script>
+        //NOW
+        var today = new Date();
+        today.getDate();
+        var el_today        = document.getElementById('today');
+        el_today.innerHTML  = today;
+        
+        var dayOfWeek = today.getDay();
+        document.getElementById('dayOfWeek').innerHTML = dayOfWeek;
+        
+        //FUTURE
+        var releaseDate = new Date();
+        releaseDate.setFullYear(2016);
+        releaseDate.setMonth(6);
+        releaseDate.setDate(17);
+        releaseDate.setHours(5);
+        releaseDate.setMinutes(0);
+        releaseDate.setSeconds(0);
+        document.getElementById('releaseDate').innerHTML = releaseDate;
+        
+        //TIME BETWEEN NOW AND FUTURE
+        // get the time for each
+        var msCurrentDate = today.getTime();
+        var msReleaseDate = releaseDate.getTime()
+        var msDiff = msReleaseDate - msCurrentDate;
+        
+        //calc days until release:
+        var daysToRelease = msDiff / (1000*60*60*24);   //milli * seconds * min * hours
+    
+        
+        
+        var hoursToRelease  = msDiff / (1000*60*60);   //milli * seconds * min * hours
+        var minsToRelease   = msDiff / (1000*60);   //milli * seconds * min * hours
+        var secToRelease    = msDiff / (1000);   //milli * seconds * min * hours
+        var milliToRelease  = msDiff / 1;   //milli * seconds * min * hours
+    
+        floorDaysToRelease = Math.floor(daysToRelease);
+        var diffDays = daysToRelease - floorDaysToRelease;
+        hoursToRelease = Math.floor(hoursToRelease); 
+        minsToRelease = Math.floor(minsToRelease);
+        secToRelease = Math.floor(secToRelease);
+        
+        
+        document.getElementById('daysToRelease').innerHTML = floorDaysToRelease;
+        document.getElementById('hoursToRelease').innerHTML = hoursToRelease;
+        document.getElementById('minsToRelease').innerHTML = minsToRelease;
+        document.getElementById('secToRelease').innerHTML = secToRelease;
+        document.getElementById('milliToRelease').innerHTML = milliToRelease;
+        
+      </script>
+    </body>
+    
+  
+  </html>

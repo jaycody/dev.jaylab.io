@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Hello Handlebars</title>
+      <script src="handlebars.js"></script>
+    </head>
+    
+    <body>
+      <div id="jasonData"></div>
+      
+      <script type="text/javascript">
+      
+      var myInfo = "<p>Hello handlebars</p> <p>I belong to the {{name}} generation</p><p>and I can {{action}} each {{duration}}</p><p>{{geometric_shape}}s were {{shape_action}} at the {{place}} as the {{occupation}} cursed</p><p>He was a {{entity}} long forsaken by the {{on_looker}} eye</p><p>{{city}}, {{state}}</p>";
+      
+      //js function to create the output, joins the data in javascript witht the html (to keep everything separate)
+      var template = Handlebars.compile(myInfo);
+      
+      //provide the data
+      var data = template({name: "BLANK", action: "take it or leave it", duration: "time", geometric_shape: "triangels", shape_action: "fallin'", place: "window", occupation: "doctor", entity: "cartoon character", on_looker: "public", city: "New York", state: "NY"});
+      
+      //put the data into the div in the document
+      document.getElementById("jasonData").innerHTML += data;
+      
+      </script>
+      
+      
+    </body>
+    
+    
+  </html>
+  

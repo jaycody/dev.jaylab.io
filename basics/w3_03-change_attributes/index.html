@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>03-change_attributes</title>
+	</head>
+
+	<body>
+		<h3>js_gungfu-w3_tutorials-03-change_attributes</h3>
+		<ul>
+			<li>change image by changing the src attribute of the image tag onclick</li>
+			<li>onclick</li>
+			<li>innerHTML</li>
+			<li>document.getAttributeBy</li>
+			<li>test absolute vs relate paths</li>
+			<li>conditionals using object.element.match</li>
+			<li>inject js using script tag</li>
+			<li>create a function in the script. call the function in the html element</li>
+		</ul>
+
+
+		<img id="myImage" onclick="changeImage()" src="../../../images/img00001.png" width="250" height="200">
+
+		<p>Click on the image to switch images</p>
+
+		<script>
+			function changeImage() {
+				var image = document.getElementById('myImage');
+				if (image.src.match("img00001")) {
+					//image.src = "/~jay/jaylab.io/public_html/images/img00002.png";
+					image.src = "../../../images/img00002.png";
+					image.height=200;
+					image.width=250;
+				} else {
+					image.src = "../../../images/img00001.png";
+					image.height=450;
+					image.width=450;
+				}
+			}
+		</script>
+
+	</body>
+</html>

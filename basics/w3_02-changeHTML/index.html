@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>02-change_HTML_content</title>
+	</head>
+
+	<body>
+		<h3>js_gungfu-w3_tutorials-02-change_HTML_content</h3>
+		<ul>
+			<li> sublime text 3 SFTP map to remote (test3) </li>
+			<li>document.getElementById('id_name').innerHTML = 'something';</li>
+			<li>change HTML with innerHTML</li>
+			<li>Uncaught TypeError: Cannot set property 'innerHTML' of null</li>
+			<li>onclick</li>
+			<li id='demo'>DEMO1: onclick changes to DATE bc this lineItem's id = 'demo'</li>
+			<li id='demo2'>DEMO2: onclick changes to new string</li>
+		</ul>
+
+		<button type='button' onclick="document.getElementById('demo').innerHTML=Date()">Click for date in line item DEMO1</button>
+
+		<button type="button" onclick="document.getElementById('demo2').innerHTML= 'Replace line item with this string'">Click new string in line item DEMO2</button>
+
+	</body>
+
+
+
+</html>

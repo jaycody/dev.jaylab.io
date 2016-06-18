@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>10-scope</title>
+		</head>
+
+		<body>
+			<h3>js_gungfu-w3_tutorials-10-scope</h3>
+
+			<ul>
+				<li><strong>scope</strong> is the set variables, objects, and functions you have access to</li>
+				<li>js has FUNCTION SCOPE: the scope changes inside functions</li>
+				<li>vars declared inside a function have local scope and are created/destroyed when the function starts and ends</li>
+				<li>vars declared outside a function become GLOBALS.  all scripts and functions can access it</li>
+				<li><strong>AUTOMATIC GLOBALS:</strong></li>
+				<li>   -  a variable becomes global, (regardless of where it's created) if the var is undeclared when a value is assigned to it</li>
+				<li>	- example of local var created inside function foo:  <strong>var car = "datsun"</strong></li>
+				<li>	- example of GLOBAL var created inside function foo:  <strong>car = "datsun"</strong></li>
+				<li><strong>VARIABLE LIFETIMES</strong></li>
+				<li>	- var lifetimes begin when vars are declared. locals are deleted when function is completed.  globals are deleted when the page is closed.</li>
+				<li><strong>GLOBALS in HTML</strong></li>
+				<li>	- in HTML, the global scope is the window object: all global variables belong to the window object</li>
+				<li>globals and functions can overwrite window variables</li>
+				<li>any function, including a window object, can overwirte global variables and functions</li>
+
+			</ul>
+
+			<h3>examples</h3>
+			<ol>
+				<li>
+					<h4>AUTOMATIC GLOBALS</h4>
+					<p>If you assign a val to a var that has not been declared, it will automatically become a GLOBAL.</p>
+					<p id="idForExample01"></p>
+				</li>
+
+				<li>
+					<h4>HTML GLOBALS</h4>
+					<p>In HTML, all global variables become window variables. see example02 in console</p>
+					<p id="idForExample02"></p>
+
+
+				</li>
+
+			</ol>
+
+			<script>
+				//example 1
+				console.log("example 1");
+				functionForExample01();
+				console.log("called from outside the function, carDeclared = " + typeof(carDeclared));
+				console.log("called from outside the function, carUndeclared = " + carUndeclared);
+				console.log(functionForExample01);
+				
+				document.getElementById('idForExample01').innerHTML = "'carUndeclared' is assigned " + carUndeclared + " without a type declaration, and therefor becomes a GLOBAL automatically. (see console)";
+				
+				function functionForExample01(){
+					//assigned without 'var' declaration, it automatically becomes GLOBAL
+					carUndeclared = 'datsun';
+					//assigned WITH a 'var' declaration, scope remains local
+					var carDeclared = 'JEEP';
+					console.log("called from INSIDE the function, carDeclared = " + carDeclared);
+				}
+
+				//example 2
+				console.log("example 2");
+				document.getElementById("idForExample02").innerHTML = "window.carUndeclared = " + window.carUndeclared;
+				console.log("called from outside the function: window.carUndeclared = " + window.carUndeclared);
+			</script>
+		
+
+		</body>
+
+	</html>

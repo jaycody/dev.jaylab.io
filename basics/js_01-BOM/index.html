@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>01-BOM</title>
+			<style type="text/css" >
+				#pwd 			{font-size: 15px;}
+				#lastModified  	{font-weight: bold; font-size: 10px}
+				#info			{text-align: center; border-style: solid}
+				button 			{color: red;}
+
+			</style>
+		</head>
+		<body>
+			<h2>js_gungfu-01-BOM</h2>
+			<p id='pwd'></p><!--inser the current directory-->
+			<p id='lastModified'></p><!--insert lastModified date-->
+			<hr>
+			<h3>the Browser Object Model</h3>
+			<ul id='topics'>
+				<li id='mouseX'></li>
+				<li id='mouseY'></li>
+				<li>use the browser object model</li>
+				<li>use the window object to find out about the current browser window or tab</li>
+			</ul>
+
+			<h4>the window object</h4>
+				<ul id='windowObject'>
+					<li>the window object represents the current browser window or tab</li>
+					<li>the window object is the topmost object in the Browser Object Model</li>
+					<li>the window object contains other objects that tell you about the browser</li>
+					
+				</ul>
+			
+			<div id='info'>
+				<!-- script populates this innerHTML -->
+			</div>
+
+
+			<!--
+			<h4>examples</h4>
+				<ul class='examples'>
+					<li id='ex01'></li>
+					<li id='ex02'></li>
+					<li id='ex03'></li>		
+				</ul>
+			-->
+			<br>
+			<br>
+			<button type='button' onclick='returnToIndex_js()'>Open js/ Index</button>
+			<button type='button' onclick='returnToIndex_dev()'>Open dev/ Index</button>
+
+			<script>
+				//calc location and last modified for the header
+				document.getElementById('pwd').innerHTML=window.location;
+				document.getElementById('lastModified').innerHTML = "updated: <strong>" + document.lastModified + "</strong>";
+
+				concatExamples();
+				displayMouseCordinates();
+
+				function concatExamples() {
+					var div_msg_browser_window  = "<h1>the Browser Object Model</h1>";
+					div_msg_browser_window  	+= "<h2>browser window</h2>";
+					div_msg_browser_window 	 	+= ex01_get_innerHeight();
+					div_msg_browser_window 		+= ex02_get_innerWidth();
+					div_msg_browser_window		+= "<h2>history length</h2>";
+					div_msg_browser_window		+= ex03_get_history_length();
+					div_msg_browser_window		+= "<h2>screen</h2>";
+					div_msg_browser_window		+= ex04_get_screen_width();
+					div_msg_browser_window		+= ex05_get_screen_height();
+					div_msg_browser_window		+= "<h2>current location</h2>";
+					div_msg_browser_window		+= ex06_get_current_location();
+					document.getElementById('info').innerHTML = div_msg_browser_window;
+				}
+
+				// get location of pointer and add it to the mouseX mouseY list items
+				function displayMouseCordinates () {
+					document.getElementById('mouseX').innerHTML = "window.screenX: " + window.screenX;
+					document.getElementById('mouseY').innerHTML = "window.screenY: " + window.screenY;
+
+				}
+
+				function returnToIndex_js() {
+					window.open('http://chaote.local/~jay/jaylab.io/public_html/dev/js/');
+				}
+
+				function returnToIndex_dev() {
+					window.open('http://chaote.local/~jay/jaylab.io/public_html/dev/');
+				}
+				
+				//ex01
+				function ex01_get_innerHeight(){
+					return "<p><strong>window.innerHeight</strong>: " + window.innerHeight + "</p>";
+				}
+
+				//ex02 innerWidth
+				function ex02_get_innerWidth() {
+					return  "<p><strong>window.innerWidth</strong>: " + window.innerWidth + "</p>";
+				}
+
+				//ex03 - history
+				function ex03_get_history_length() {
+					return  "<p>window.history.length: " + window.history.length + "</p>";
+				}
+
+				function ex04_get_screen_width() {
+					//var 	ex04_content 	= window.screen.width;
+					return 	"<p>window.screen.width: " + window.screen.width + "</p>";
+				}
+
+				function ex05_get_screen_height() {
+					return 	"<p>window.screen.height: " + window.screen.height + "</p>";
+				}
+
+				function ex06_get_current_location() {
+					return  "<p>" + window.location + "</p>";
+				}
+
+			</script>
+
+
+
+		</body>
+	</html>

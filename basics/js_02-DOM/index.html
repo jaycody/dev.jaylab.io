@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="02.css">
+			<title>02-DOM</title>
+		</head>
+		<body>
+			<h2 id='title'></h2>
+			<p id='pwd'></p><!--inser the current directory-->
+			<hr>
+			
+			<h3>Document Object Model</h3>
+			
+			<ul id='topics'>
+				<li>the topmost object in the browser object model (BOM) is the window</li>
+				<li>the topmost object in the DOM is the document</li>
+				<li>the document object of the DOM represents the web page loaded into the current browser or tab</li>
+				<li>the DOM is vital to accessing and amending the contents of the current page</li>
+			</ul>
+
+			<h4>properties of the DOM:</h4>
+			<ul id='dom_properties'>
+				<li id='doc_title'>document.title</li>
+				<li id='doc_lastModified'>document.lastModified</li>
+				<li id='doc_url'>document.URL</li>
+				<li id='doc_domain'>document.domain</li>
+			</ul>
+
+			<h4>methods of the DOM:</h4>
+			<table>
+				<tr>
+					<th>DOM METHOD</th>
+					<th>DESCRIPTION</th>
+				</tr>
+				<tr>
+					<td>document.write()</td>
+					<td>writes text to document</td>
+				</tr>
+				<tr>
+					<td>document.getElementById()</td>
+					<td>returns element, if there is an element whose id attribute matches the argument</td>
+				</tr>
+				<tr>
+					<td>document.querySelectorAll()</td>
+					<td>returns a list of elements that match CSS selector passed as an argument</td>
+				</tr>
+				<tr>
+					<td>document.createElement()</td>
+					<td>creates new element</td>
+				</tr>
+				<tr>
+					<td>document.createTextNode()</td>
+					<td>creates new text node. Really?</td>
+				</tr>
+			</table>
+			</ul>
+
+			<div id='ex_container'>	
+			</div>
+
+			<br>
+			<br>
+			<hr>
+			<p id='lastModified'></p><!--insert lastModified date-->
+			<button type='button' onclick='returnToIndex_js()'>Open js/ Index</button>
+			<button type='button' onclick='returnToIndex_dev()'>Open dev/ Index</button>
+		<script src='02.js'></script>
+		</body>
+	</html>

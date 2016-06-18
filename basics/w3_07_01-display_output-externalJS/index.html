@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>07-display_output</title>
+			<script src='display.js'></script>
+		</head>
+
+		<body>
+			<h3>js_gungfu-w3_tutorials-07-display_output</h3>
+			<p>tutorial from <a href="http://www.w3schools.com/js/js_output.asp">http://www.w3schools.com/js/js_output.asp</a></p>
+			<ul>
+				<li>use <strong>window.alert()</strong> to write into an alert box</li>
+				<li>add window.alert(val) to the 'script' tag </li>
+				<li>write a function for the window.alert that gets triggered upon button click (onclick)</li>
+				<li>use <strong>document.write()</strong> to display data</li>
+				<li>Using document.write() after an HTML document is fully loaded, will delete all existing HTML:</li>
+				<li>to access an HTML element, JS can use the document.getElementById(id) method</li>
+				<li> ---- where the 'id' attribute defines the HTML element and innerHTML property defines the HTML content.</li>
+				<li>To "display data" in HTML, (in most cases) you will set the value of an innerHTML property.</li>
+				<li>use <strong>console.log</strong> to display data</li>
+			</ul>
+
+			<h4>examples</h4>
+			<ol>
+				<li>
+					<h4>display output in an alert box via window.alert()</h4>
+					<button type='button' onclick="chooseSides()">Alert: which side?</button>
+				</li>
+
+				<li>
+					<h4>display output via document.write()</h4>
+					<p>
+						<script>
+							document.write("NOTE: Using document.write() after an HTML document is fully loaded, will delete all existing HTML");
+						</script>
+					</p>
+					
+					<button type='button' onclick='writeInDocument()'>calls function for document.write() --> which side?</button>
+					<button type='button' onclick="document.write('The BOOMIN SIDE, of course!')">calls document.write() from button's onclick attribute</button>
+				</li>
+
+				<li>
+					<h4>display output using innerHTML</h4>
+					<p id="demo">Upon button push, change this innerHTML content to which side?</p>
+					<button type='button' onclick="getInnerHTML()">Push to change the previous line's content</button>
+				</li>
+
+				<li>
+					<h4>display output using console.log()</h4>
+					<button type='button' onclick="logToConsole()">Push to log the appropriate side to the console</button>
+				</li>
+			</ol>
+
+		</body>
+
+	</html>

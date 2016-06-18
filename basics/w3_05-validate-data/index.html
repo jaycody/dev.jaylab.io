@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>05-validate-data</title>
+	</head>
+	<body>
+		<h3>js_gungfu-w3_tutorials-05-validate-data</h3>
+		<ul>
+			<li>use the input element type 'number' </li>
+			<li>onclick</li>
+			<li>onclick, get value from the input field assign to variable</li>
+			<li>use conditionals to validate data</li>
+			<li>get the value of the input field whose id="numb"</li>
+		</ul>
+		<p>Enter value greater than 10</p>
+		<input id="numb" type="number">
+		<button name="button" onclick="validate()">*</button>
+		<p id="message"></p>
+
+		<script>
+			function validate() {
+				var entered, text;
+				entered=document.getElementById("numb").value;
+				if (entered > 10){
+					console.log("greater than 1");
+					document.getElementById("message").innerHTML="THIS";
+				} else {
+					document.getElementById("message").innerHTML="LESS THAN THAT";
+				}
+			}
+		</script>
+	</body>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>11-events</title>
+			<style type="text/css" >
+				ul #eventTypes strong {
+					font-size: 15px;
+				}
+				ul #eventsList {
+					font-weight: bold;
+					font-size: 15px
+				}
+				button {
+					color: red;
+				}
+			</style>
+		</head>
+
+
+		<body>
+			<h3>js_gungfu-w3_tutorials-11-events</h3>
+
+			<ul>
+				<li><strong>EVENTS</strong> are what happen to HTML elements</li>
+				<li>js can <strong>REACT</strong> to these <strong>EVENTS</strong></li>
+				<li>example HTML events</li>
+				<ul>
+					<li>when page loads</li>
+					<li>when input field changes</li>
+					<li>when button is clicked</li>
+				</ul>
+				<li>js can execute code when events are detected</li>
+				<li><strong>event handler attributes</strong> (as js code), can be added to HTML elements using single or double quotes</li>
+				<li>standard format:    some-HTML-element some-event='some javascript' </li>
+				<li><strong>this.innerHTML</strong> affects the element itself</li>
+				<li>use event attributes to call functions</li>
+				<li>common HTML events (short list)</li>
+				<ul id="eventTypes">
+					<li><strong>onchange</strong> an element has been changed</li>
+					<li><strong>onclick</strong> user clicks and HTML element</li>
+					<li><strong>onmouseover</strong> user moves the mouse over an HTML element</li>
+					<li><strong>onmouseout</strong> user moves the mouse away from an elment</li>
+					<li><strong>onkeydown</strong> user pushes a keyboard key</li>
+					<li><strong>onload</strong> browser has finished loading a page</li>
+				</ul>
+				<li>event TYPES (HTML DOM events)</li>
+				<ul id="eventsList">
+					<li>Mouse Events</li>
+					<li>Keyboard Events</li>
+					<li>Frame/Ojbect Events</li>
+					<li>Form Events</li>
+					<li>Drag Events</li>
+					<li>Clipboard Events</li>
+					<li>Print Events</li>
+					<li>Media Events</li>
+					<li>Animation Events</li>
+					<li>Transition Events</li>
+					<li>Server-Sent Events</li>
+					<li>Misc Events</li>
+				</ul>
+				<li><a href="http://www.w3schools.com/jsref/dom_obj_event.asp">comprehensive list of HTML DOM events</a></li>
+
+			</ul>
+			<h3>What can js do?</h3>
+			<p>event handlers can handle and verify user input, user actions, and browser actions, i.e.:</p>
+			<ul>
+				<li>trigger every time a page loads</li>
+				<li>trigger upon page close</li>
+				<li>trigger upon button click</li>
+				<li>verify user input</li>
+			</ul>
+			<p>methods by which js can work with events</p>
+			<ul>
+				<li>HTML event attributes can execute js code directly</li>
+				<li>HTML event attributes can call js functions</li>
+				<li>create and assign custom event handler functions to HTML elements</li>
+				<li>PREVENT events from being sent or from being handled</li>
+			</ul>
+
+
+			<h3>examples</h3>
+			<ol id="idForExamplesList">
+				<li>onclick affects another element -- use getElementById with onclick within button</li>
+				<button onclick="getElementById('idForExample01').innerHTML = Date()">Update the time</button></li>
+				<p id="idForExample01">Update this</p>
+
+
+				<li>onclick affects itself -- use <strong>this.innerHTML</strong></li>
+				<button onclick="this.innerHTML=Date()">Update THIS</button>
+									
+				<li>onclick calls a function</li>
+				<button id="idForExample03" onclick="displayDate()">Call Function to display date</button>
+
+				<li>get the paragraph element to change onclick</li>
+				<p onclick="this.innerHTML = Date();" onmouseout="this.innerHTML = 'This p element changes onmouseout';">This p element will changed onclick</p>
+			
+
+				<li>get the following line items to change text onmouseover and change back onmouseout</li>
+				<p id="idForExample05" onmouseover="changeText()"  onmouseout="returnText()">Mouse OVER and OUT</p>
+			
+				<li>get all line items to change color onmouseover and change back onmouseout</li>
+				<p id="idForExample06" onmouseover="changeLineItemColor()" onmouseout="returnLineItemColor()">Change Font color onmouseover</p>
+
+				<!--example 7 -->
+				<li>onmouseover / onmouseout, change all elements in the examples list</li>
+				<p id="idForExample07" onmouseover="changeAllElementsInExamplesList()" onmouseout="returnAllElementsInExamplesList()">Change all elements in examples list</p>
+
+				
+			</ol>
+
+
+
+
+			<script>
+				//example 7
+				function returnAllElementsInExamplesList() {
+					examplesList = document.getElementById('idForExamplesList');
+					listOfAllElementsInExamplesList = examplesList.getElementsByTagName('*');
+					listOfParagraphsInExamplesList	= examplesList.getElementsByTagName('p');
+					console.log("list all elements = " + listOfAllElementsInExamplesList);
+					console.log("list all paragraphs = " + listOfParagraphsInExamplesList);
+					//console.log(listOfAllElementsInExamplesList.length);
+					
+					for (var i = 0; i < listOfAllElementsInExamplesList.length; i++) {
+						listOfAllElementsInExamplesList[i].style.color = 'black';
+						console.log(listOfAllElementsInExamplesList[i]);
+					}
+					
+					for (var i = 0; i < listOfParagraphsInExamplesList.length; i++) {
+						listOfParagraphsInExamplesList[i].style.color = 'black';
+						listOfParagraphsInExamplesList[i].style.backgroundColor = 'white';
+						listOfParagraphsInExamplesList[i].style.border = 'none';
+						console.log(listOfParagraphsInExamplesList[i]);
+					}
+
+				}
+				function changeAllElementsInExamplesList() {
+					console.log("ex7: onmouseover logged");
+					examplesList = document.getElementById('idForExamplesList');
+					listOfAllElementsInExamplesList = examplesList.getElementsByTagName('*');
+					listOfParagraphsInExamplesList	= examplesList.getElementsByTagName('p');
+					console.log("list all elements = " + listOfAllElementsInExamplesList);
+					console.log("list all paragraphs = " + listOfParagraphsInExamplesList);
+					//console.log(listOfAllElementsInExamplesList.length);
+					
+					for (var i = 0; i < listOfAllElementsInExamplesList.length; i++) {
+						listOfAllElementsInExamplesList[i].style.color = 'green';
+						//listOfAllElementsInExamplesList[i].style.fontSize = '10px';
+						console.log(listOfAllElementsInExamplesList[i]);
+					
+					}
+					
+					for (var i = 0; i < listOfParagraphsInExamplesList.length; i++) {
+						listOfParagraphsInExamplesList[i].style.color = 'blue';
+						listOfParagraphsInExamplesList[i].style.backgroundColor = 'yellow';
+						listOfParagraphsInExamplesList[i].style.border = 'thick solid black';
+						
+						console.log(listOfParagraphsInExamplesList[i]);
+					}
+				}
+
+
+				//example 6
+				function changeLineItemColor(){
+					console.log("example 6 onmouseover logged");
+					document.getElementById('idForExample06').style.color = 'red';
+					var list = document.getElementsByTagName('LI');
+					console.log(list.length);
+					for (var i = 0; i < list.length; i++) {
+						list[i].style.color = 'red';
+						//list[i].style.fontSize = '10px'; 
+						
+
+					}
+				}
+
+				function returnLineItemColor(){
+					console.log("example 6 onmouseout logged");
+					document.getElementById('idForExample06').style.color = 'purple';
+					var list = document.getElementsByTagName('LI');
+					for (var i = 0; i < list.length; i++){
+						list[i].style.color = 'black';
+						list[i].style.fontSize = '14px';
+					}
+				}
+
+
+				//example 5
+				function changeText(){
+					document.getElementById('idForExample05').innerHTML = 'red';
+					document.getElementById('idForExample05').style.color = 'red';
+					console.log("example 5 onmouseover logged");
+				}
+				function returnText(){
+					document.getElementById('idForExample05').innerHTML = 'Mouse OVER and OUT';
+				}
+
+				//example 3
+				console.log("Function for example 3 = ");
+				console.log(displayDate);
+				function displayDate() {
+					document.getElementById("idForExample03").innerHTML = Date();
+				}
+			</script>
+		</body>
+
+
+	</html>

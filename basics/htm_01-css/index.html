@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="01.css">
+			<title id='lesson'></title>
+		</head>
+		<body>
+			<h2 id='pageTitle'></h2>
+			<p id='url'></p><!--inser the current directory-->
+			<p id='date'></p><!--inser the current directory-->
+			<hr>
+
+		<h2>cascading style sheets</h2>
+		<ul classs='mainPoints'>
+			<li>styling can be added to HTML in 3 ways:</li>
+			<ul>
+				<li><b>Inline</b> - using a <b><i>style atrribute</i></b> in HTML elements</li>
+				<li><b>Internal</b> - using a <b>&#60;style&#62; element</b> in HTML &#60;head&#62; section</li>
+				<li><b>External</b> - using one or more <b>external CSS files</b></li>
+			</ul>
+		</ul>
+		<table class='descriptions'>
+			<tr>
+				<th>element</th>
+				<th>example</th>
+			</tr>
+			<tr>
+				<td>&#60;b&#62;</td>
+				<td><b>bold</b> text</td>
+			</tr>
+			<tr>
+				<td>&#60;strong&#62;</td>
+				<td><strong>strong</strong> text</td>
+			</tr>
+			<tr>
+				<td>&#60;em&#62;</td>
+				<td><em>emphasized text</em></td>
+			</tr>
+			<tr>
+				<td>&#60;i&#62;</td>
+				<td><i>italicized text</i></td>
+			</tr>
+
+			<tr>
+				<td>&#60;small&#62;</td>
+				<td>not TALL but <small>small</small> text</td>
+			</tr>
+			<tr>
+				<td>&#60;mark&#62;</td>
+				<td><mark>marked</mark> text</td>
+			</tr>
+			<tr>
+				<td>&#60;ins&#62;</td>
+				<td><ins>inserted</ins> text</td>
+			</tr>
+			<tr>
+				<td>&#60;sub&#62;</td>
+				<td><sub>sub</sub>script text<sub>sub</sub></td>
+			</tr>
+			<tr>
+				<td>&#60;sup&#62;</td>
+				<td><sup>supper</sup>script text<sup>sup</sup></td>
+			</tr>
+			<tr>
+				<td>&#60;del&#62;</td>
+				<td><del>deleted</del> text</td>
+			</tr>
+			<tr>
+				<td>&#60;q&#62;</td>
+				<td>tag that defines, <q>a short quote</q></td>
+			</tr>
+			<tr>
+				<td>&#60;abbr&#62;</td>
+				<td>tag that defines abbreviations like, <abbr>NASA</abbr></td>
+			</tr>
+			<tr>
+				<td>&#60;cite&#62;</td>
+				<td>tag that defines <cite>a title of work</cite></td>
+			</tr>
+			<tr>
+				<td>&#60;address&#62;</td>
+				<td>tag for contact info, 
+					<address>
+						j stephens<br>
+						166 Orchard St<br>
+						NY, NY 00001<br>
+					</address>
+				</td>
+			</tr>
+			<tr>
+				<td>&#60;blockquote&#62;</td>
+				<td>tag to:<blockquote>blockquote</blockquote> text</td>
+			</tr>
+			<tr>
+				<td>&#60;pre&#62;</td>
+				<td>tag to:
+					<pre>preserve both spaces     between       words 
+and 
+  line 
+     breaks			</pre>
+				</td>
+			</tr>
+			<tr>
+				<td>&#60;kbd&#62;</td>
+				<td><kbd>defines keyboard input fixed width</kbd> text</td>
+			</tr>
+			<tr>
+				<td>&#60;var&#62;</td>
+				<td>defines variables int <var>x</var> = <var>locX</var></td>
+			</tr>
+			<tr>
+				<td>&#60;samp&#62;</td>
+				<td><samp>defines sample output from a computer program</samp> text</td>
+			</tr>
+			<tr>
+				<td>&#60;code&#62;</td>
+				<td><code>var tag.code = 'for code'; // and use css to alter</code></td>
+			</tr>
+			<tr>
+				<td>&#60;code&#62; inside &#60;pre&#62;</td>
+				<td><pre><code>var tag.code-inside-pre = 'preserves whitespace and line breaks';
+PVector velocity    	= new PVector(0,0);
+tag.code-inside-pre 	=== pre.code.code.pre;</code></pre></td>
+			</tr>
+			<tr>
+				<td>&#60;textarea&#62;</td>
+				<td><textarea>controllable multiline input area for text</textarea></td>
+			</tr>
+			<caption>text formatting</caption>
+		</table>
+		<br>
+		<textarea name="testTextArea">testTextArea</textarea>
+			
+		
+			<hr>
+			<p id='lastModified'></p><!--insert lastModified date-->
+			<button type='button' onclick='pageInfo.displayReturnToIndex_js()'>Open js/ Index</button>
+			<button type='button' onclick='pageInfo.displayReturnToIndex_dev()'>Open dev/ Index</button>
+		<script src='01.js'></script>
+		</body>
+	</html>
