@@ -85,8 +85,8 @@ function Walker(mapBoundary) {
 
 function displayPageTitle(){
   //display in console
-  println(pageTitle);
-  println('');
+  //println(pageTitle);
+  //println('');
   //display in canvas
   fill(255);
   strokeWeight(0);
