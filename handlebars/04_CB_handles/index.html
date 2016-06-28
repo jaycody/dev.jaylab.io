@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>04_CB_handles</title>
+    <script src="handlebars.js"></script>
+  </head>
+  <body>
+    
+    <div id="contentDiv">
+      <!--handlebar helper function fills this-->
+      
+    </div>
+  
+    <script id="the-template" type="text/x-handlebars-template">
+        {{#pickCbHandle name}}
+          BuggarBear
+          Bandit
+          SnowMan
+          Smokey
+          B.J. and the Bear
+          Rubber Duck
+          Shepherd
+          
+          
+          
+        {{/pickCbHandle}}
+    </script>
+    
+    
+    
+    <script type='text/javascript'>
+      //1. grab and store the template info
+      var templateInfo = document.getElementById("the-template").innerHTML;
+      //2. compile the templateInfo
+      var template = Handlebars.compile(templateInfo);
+      //3. create the helper function
+      Handlebars.registerHelper("pickCbHandle", function(name, options){
+        var nameList = options.fn();
+        nameList     = nameList.trim().split("\n");
+        //console.log(nameList);
+        //loop through the name lists
+        var output = "";  //prep an empty string
+        for (var handle in nameList){
+          var thisHandle = nameList[handle].trim();
+          output += '<input type="button" name="' + name + '" value="' + thisHandle + '" ><br  />';
+        }
+        console.table(output);
+        return output
+      });
+      var templateData = template({});
+      document.getElementById("contentDiv").innerHTML +=templateData;
+    </script>
+    
+    
+    
+    
+  </body>
+</html>

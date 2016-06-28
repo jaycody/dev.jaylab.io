@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>03_vandals</title>
+    <script src="handlebars.js"></script>
+  </head>
+  <body>
+    
+    <div id="htmlDiv">
+    <h3>buttons via standard html</h3>
+    <input type="radio" name="size"value="Watch">Watch<br />
+    <input type="radio" name="size"value="Your">Your<br />
+    <input type="radio" name="size"value="Parking">Parking<br />
+    <input type="radio" name="size"value="Meters">Meters<br />
+    <input type="radio" name="size"value=".js">.js<br />
+    </div>
+    
+    <div id="contentDiv">
+      <!--div to be populated by the handlebars function--> 
+    </div>
+    
+    <script id="the-template" type="text/x-handlebars-template">
+      {{#makeRadio "size"}}
+        Vandals
+        Took
+        The
+        Handles
+        Bar.js
+      {{/makeRadio}}
+      
+    </script>
+    
+  
+    
+    
+    <script type='text/javascript'>
+    
+    //create the helper functions
+    // 1. extract, store, and compile the template handlebars from the script tag to be p
+    var templateInfo = document.getElementById('the-template').innerHTML;
+    var template = Handlebars.compile(templateInfo);
+    // 2. register the helper function, which itself calls a function 
+    Handlebars.registerHelper("makeRadio", function(name, options){
+      var radioList = options.fn();
+      //console.log(radioList);
+      console.table(radioList);
+      radioList = radioList.trim().split("\n");
+      //console.table(radioList);
+      console.log(radioList);
+      var output = "<h3>buttons via handlebars</h3>";;
+      for (var val in radioList){
+        var item = radioList[val].trim();
+        console.log(item);
+        output += '<input type="radio" name="' + name + '"value="' + item + '">' + item + '<br />';
+        
+      }
+      console.log(output);
+      return output;
+    });
+    
+    var templateData = template({});
+    
+    document.getElementById("contentDiv").innerHTML += templateData;
+    </script>
+    
+    
+    
+    
+  </body>
+</html>
