@@ -17,7 +17,7 @@ function Attractor(){
   this.fillAlpha      = map(this.G, 1, 3, 0, 50);
   this.attractorColor = color(random(255), random(255), random(255), this.fillAlpha);
   
-  this.attractorImage   = loadImage("../../../assets/alphas/2011-5f-2nd_order-400x400.png");
+  this.attractorImage   = loadImage("/assets/alphas/2011-5f-2nd_order-400x400.png");
   this.offsetForEasing  = 0;
   this.easing           = .05;
   this.maxspeed         = 8;

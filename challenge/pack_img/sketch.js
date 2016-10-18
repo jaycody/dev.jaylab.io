@@ -1,9 +1,9 @@
 var INNER_WIDTH   = window.innerWidth;
 var INNER_HEIGHT  = window.innerHeight;
 
-var num_of_contributedImages  = 30; 
+var num_of_contributedImages  = 98; 
 var contributedImages         = [];
-var TOTAL_IMAGES_TO_DISPLAY     = 14;
+var TOTAL_IMAGES_TO_DISPLAY     = 98;
 
 var collaged                  = [];
 
@@ -15,7 +15,7 @@ var maxWidthScale       = .4;
 //var maxWidth            = 400;
 var maxWidth            = INNER_WIDTH * maxWidthScale; //1/4 INNER_WIDTH
 
-var dataPathPrefix      = "data/UT-";
+var dataPathPrefix      = "/assets/peeps/UT/UT-";
 
 
 var imageArray = [];
@@ -72,7 +72,6 @@ function setup() {
     //start second loop and only add contributedImages to collaged [] that pass threshold
     for (var j = 0; j < collaged.length; j++){
       
-      console.log('made it');
       
       }
     if(!isOverlapping){
